@@ -59,6 +59,7 @@
 			z-index:-10;
 			width:50%;
 			}
+
 		</style>
 	</head>
 	<body>
@@ -68,194 +69,119 @@
 				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
 					# WordPress Roles & Capabilities
 
-					Managing access, the WordPress way
+					Managing access controls, the WordPress way
 				</section>
 
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>Why use automation?</h2>
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## Default WordPress Roles
+
+					* Administrator
+					* Editor
+					* Author
+					* Contributor
+					* Subscriber
+					* Super Admin (MultiSite Only)
+				</section>
+
+				<section data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					<h2>How do we check these roles?</h2>
+					<pre><code data-trim data-noescape>(bool) is_super_admin() - ???
+(bool) is_admin() - ???
+(bool) is_author() - ???
+					</code></pre>
+				</section>
+
+				<section data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					<h2>How do we check these roles?</h2>
+					<pre><code data-trim data-noescape>(bool) is_super_admin() - OK
+(bool) is_admin() - NOPE
+(bool) is_author() - NOPE
+					</code></pre>
+				</section>
+
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## What if I told you...
+
+					WordPress roles don't directly determine if a user has access to a resource
+				</section>
+
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					![Mind Blown](images/roles-caps/flow-mind-blown.gif)
+				</section>
+
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## WordPress uses Roles...
+
+					as a way of grouping what are called capabilities
+				</section>
+
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## So what is a "capability"
+
+					A hyper-specific list of 'tasks' that can be done for a user to determine if they can perform an action
+				</section>
+
+				<section data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					<h2>Some commonly used caps</h2>
 
 					<div class="left">
 						<ul>
-							<li class="fragment">Make Less Errors</li>
-							<li class="fragment">Reduce Labor Costs</li>
-							<li class="fragment">Increased Visbility</li>
+							<li class="fragment">manage_options</li>
+							<li class="fragment">upload_files</li>
+							<li class="fragment">install_themes</li>
+							<li class="fragment">edit_theme_options</li>
+							<li class="fragment">install_plugins</li>
+							<li class="fragment">unfiltered_html</li>
 						</ul>
 					</div>
 					<div class="right">
 						<ul>
-							<li class="fragment">Improve Scalability</li>
-							<li class="fragment">Better Organization</li>
-							<li class="fragment">Better Communication</li>
+							<li class="fragment">edit_users</li>
+							<li class="fragment">edit_posts</li>
+							<li class="fragment">edit_others_posts</li>
+							<li class="fragment">edit_published_posts</li>
+							<li class="fragment">publish_posts</li>
+							<li class="fragment">edit_pages</li>
 						</ul>
 					</div>
 				</section>
 
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					# Better Customer Service
+				<section data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					<h2>How do we check these capabilities?</h2>
+					<pre><code data-trim data-noescape>(bool) current_user_can( $capability, $object_id )</code></pre>
 				</section>
 
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>Typical Automation</h2>
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## Why use Capabilities instead of Roles?
 
-					<div>
-						<span class="fragment">Action</span>
-						<span class="fragment"> <i class="far fa-arrow-alt-circle-right"></i> </span>
-						<span class="fragment">Processor</span>
-						<span class="fragment"> <i class="far fa-arrow-alt-circle-right"></i> </span>
-						<span class="fragment">Service</span>
-					</div>
-
-					<div class="fragment">
-						Custom Developement with APIs<br />
-						<small>API - Application Programming Interface</small>
-					</div>
+					[Let's have a look](https://cdn.wpbeginner.com/wp-content/uploads/2015/03/userroles.png)
 				</section>
 
-				<section data-markdown data-background-image="images/zapier/zapier-homepage.png" data-background-opacity=".1">
-					## What is Zapier?
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## Why use Capabilities instead of Roles?
 
-					![Zapier Homepage](images/zapier/zapier-homepage.png)
+					In short, it's easier to manage access checking for a capability than it is checking for more than a one role.
 				</section>
 
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					## How can I use automation?
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## The long answer?
 
-					![Blue or Red Pill](images/zapier/pill.gif)
+					Both roles and capabilites are considered an API and can be extended, so you could have any number of roles or capabilites registered.
+					Capabilities are also even more specific, going down to if a user can edit a specific post or page.
 				</section>
 
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					## Wait, I can register roles and caps?
 
-					<div class="left">
-						<ul>
-							<li class="fragment">New Comment</li>
-							<li class="fragment">New Taxonomy</li>
-							<li class="fragment">New Custom Post Type</li>
-							<li class="fragment">New Post</li>
-							<li class="fragment">New Post Status</li>
-						</ul>
-					</div>
-					<div class="right">
-						<ul>
-							<li class="fragment">New User</li>
-							<li class="fragment">New Comment Status</li>
-							<li class="fragment">New Category</li>
-							<li class="fragment">New Post Format</li>
-							<li class="fragment">New Author</li>
-							<li class="fragment">New Media</li>
-						</ul>
-					</div>
+					![Yup!](images/roles-caps/yup-pam.gif)
+
+
+
+					[Example](https://github.com/easydigitaldownloads/easy-digital-downloads/blob/master/includes/class-edd-roles.php#L34)
 				</section>
 
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
-
-					<div class="left">
-						<ul>
-							<li class="fragment">Easy Digital Downloads</li>
-							<li class="fragment">AffilaiteWP</li>
-							<li class="fragment">Gravity Forms</li>
-						</ul>
-					</div>
-					<div class="right">
-						<ul>
-							<li class="fragment">Contact Form 7</li>
-							<li class="fragment">WooCommerce</li>
-							<li class="fragment">Ninja Forms</li>
-						</ul>
-					</div>
-				</section>
-
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
-
-					<div class="left">
-						<ul>
-							<li class="fragment">New Order</li>
-							<li class="fragment">New Affiliate</li>
-							<li class="fragment">New Customer</li>
-							<li class="fragment">New Affiliate Creatives</li>
-							<li class="fragment">Affilite Visits Converts</li>
-						</ul>
-					</div>
-					<div class="right">
-						<ul>
-							<li class="fragment">New Form Submission</li>
-							<li class="fragment">Customer Updated</li>
-							<li class="fragment">Order Refunded</li>
-							<li class="fragment">Affiliate Payouts</li>
-							<li class="fragment">Customer VIP</li>
-						</ul>
-					</div>
-				</section>
-
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
-
-					<img src="images/zapier/automate-all-the-things.jpg" />
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/zapier-pricing-full.png" data-background-opacity=".1">
-					## Before we dive in
-
-					![Zapier Pricing](images/zapier/zapier-pricing.png)
-				</section>
-
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h2>What is a "Zap"?</h2>
-
-					<ol>
-						<li class="fragment">Trigger</li>
-						<li class="fragment">Filter (Optional)</li>
-						<li class="fragment">Action</li>
-						<li class="fragment">Filter (Optional)</li>
-						<li class="fragment">Action (Optional)</li>
-					</ol>
-
-					<div class="fragment">
-						<a target="_blank" href="https://zapier.com/app/editor/35465766/nodes/35465766/action"><button>Let's take a look</button></a>
-					</div>
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					# Examples?
-
-					![Yep](images/zapier/yep.gif)
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					### Order Deadline Reminders
-					#### Set Google Calendar Reminders when an order is paid for
-					![Packages Tossed](images/zapier/packages.gif)
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					### New Gravity Forms Submission
-					#### Send it to Slack!
-					![Slack Is Awesome](images/zapier/slack-is-awesome.gif)
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					## I've got pages of these...
-					### Should we just go check out the app?
-				</section>
-
-				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					<h3>Customer Outreach</h3>
-					<h4>When a customer crosses a certain lifetime value, put them in a queue to be contacted by someone</h4>
-
-					<div class="fragment">
-						<a target="_blank" href="https://zapier.com/app/editor/31441883/nodes/31441883/action"><button>VIP Outreach</button></a>
-					</div>
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					# So what do you want to Zap?
-					### Lets see if we can do this.
-				</section>
-
-				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
-					## What do you want to Zap?
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					# Let's chat Roles and Caps...
 				</section>
 			
 			</div>

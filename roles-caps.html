@@ -1,0 +1,308 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Custom CSS for the headers and footer -->
+		<style type="text/css">
+			/* 1. Style header/footer <div> so they are positioned as desired. */
+			#header-left {
+				position: absolute;
+				top: 0%;
+				left: 0%;
+			}
+			#header-right {
+				position: absolute;
+				top: 0%;
+				right: 0%;
+			}
+			#footer-left {
+				position: absolute;
+				bottom: 2%;
+				left: 2%;
+				font-size: .5em;
+			}
+
+			.left {
+			left:-8.33%;
+			text-align: left;
+			float: left;
+			width:50%;
+			z-index:-10;
+			}
+
+			.right {
+			left:31.25%;
+			top: 75px;
+			float: right;
+			text-align: right;
+			z-index:-10;
+			width:50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section data-markdown data-background-image="images/roles-caps/isaiah-rustad-527168-unsplash.jpg" data-background-opacity=".1">
+					# WordPress Roles & Capabilities
+
+					Managing access, the WordPress way
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>Why use automation?</h2>
+
+					<div class="left">
+						<ul>
+							<li class="fragment">Make Less Errors</li>
+							<li class="fragment">Reduce Labor Costs</li>
+							<li class="fragment">Increased Visbility</li>
+						</ul>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="fragment">Improve Scalability</li>
+							<li class="fragment">Better Organization</li>
+							<li class="fragment">Better Communication</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					# Better Customer Service
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>Typical Automation</h2>
+
+					<div>
+						<span class="fragment">Action</span>
+						<span class="fragment"> <i class="far fa-arrow-alt-circle-right"></i> </span>
+						<span class="fragment">Processor</span>
+						<span class="fragment"> <i class="far fa-arrow-alt-circle-right"></i> </span>
+						<span class="fragment">Service</span>
+					</div>
+
+					<div class="fragment">
+						Custom Developement with APIs<br />
+						<small>API - Application Programming Interface</small>
+					</div>
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/zapier-homepage.png" data-background-opacity=".1">
+					## What is Zapier?
+
+					![Zapier Homepage](images/zapier/zapier-homepage.png)
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					## How can I use automation?
+
+					![Blue or Red Pill](images/zapier/pill.gif)
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
+
+					<div class="left">
+						<ul>
+							<li class="fragment">New Comment</li>
+							<li class="fragment">New Taxonomy</li>
+							<li class="fragment">New Custom Post Type</li>
+							<li class="fragment">New Post</li>
+							<li class="fragment">New Post Status</li>
+						</ul>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="fragment">New User</li>
+							<li class="fragment">New Comment Status</li>
+							<li class="fragment">New Category</li>
+							<li class="fragment">New Post Format</li>
+							<li class="fragment">New Author</li>
+							<li class="fragment">New Media</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
+
+					<div class="left">
+						<ul>
+							<li class="fragment">Easy Digital Downloads</li>
+							<li class="fragment">AffilaiteWP</li>
+							<li class="fragment">Gravity Forms</li>
+						</ul>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="fragment">Contact Form 7</li>
+							<li class="fragment">WooCommerce</li>
+							<li class="fragment">Ninja Forms</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
+
+					<div class="left">
+						<ul>
+							<li class="fragment">New Order</li>
+							<li class="fragment">New Affiliate</li>
+							<li class="fragment">New Customer</li>
+							<li class="fragment">New Affiliate Creatives</li>
+							<li class="fragment">Affilite Visits Converts</li>
+						</ul>
+					</div>
+					<div class="right">
+						<ul>
+							<li class="fragment">New Form Submission</li>
+							<li class="fragment">Customer Updated</li>
+							<li class="fragment">Order Refunded</li>
+							<li class="fragment">Affiliate Payouts</li>
+							<li class="fragment">Customer VIP</li>
+						</ul>
+					</div>
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>Zapier <i class="fas fa-plus"></i> WordPress = <i class="fas fa-heart"></i></h2>
+
+					<img src="images/zapier/automate-all-the-things.jpg" />
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/zapier-pricing-full.png" data-background-opacity=".1">
+					## Before we dive in
+
+					![Zapier Pricing](images/zapier/zapier-pricing.png)
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h2>What is a "Zap"?</h2>
+
+					<ol>
+						<li class="fragment">Trigger</li>
+						<li class="fragment">Filter (Optional)</li>
+						<li class="fragment">Action</li>
+						<li class="fragment">Filter (Optional)</li>
+						<li class="fragment">Action (Optional)</li>
+					</ol>
+
+					<div class="fragment">
+						<a target="_blank" href="https://zapier.com/app/editor/35465766/nodes/35465766/action"><button>Let's take a look</button></a>
+					</div>
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					# Examples?
+
+					![Yep](images/zapier/yep.gif)
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					### Order Deadline Reminders
+					#### Set Google Calendar Reminders when an order is paid for
+					![Packages Tossed](images/zapier/packages.gif)
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					### New Gravity Forms Submission
+					#### Send it to Slack!
+					![Slack Is Awesome](images/zapier/slack-is-awesome.gif)
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					## I've got pages of these...
+					### Should we just go check out the app?
+				</section>
+
+				<section data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					<h3>Customer Outreach</h3>
+					<h4>When a customer crosses a certain lifetime value, put them in a queue to be contacted by someone</h4>
+
+					<div class="fragment">
+						<a target="_blank" href="https://zapier.com/app/editor/31441883/nodes/31441883/action"><button>VIP Outreach</button></a>
+					</div>
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					# So what do you want to Zap?
+					### Lets see if we can do this.
+				</section>
+
+				<section data-markdown data-background-image="images/zapier/ray-gun.jpg" data-background-opacity=".05">
+					## What do you want to Zap?
+				</section>
+			
+			</div>
+		</div>
+
+		<!-- The Header/footers -->
+		<div id="hidden" style="display:none;">
+			<div id="header">
+				<div id="footer-left">
+					<i class="fab fa-twitter"></i> cklosowski | <i class="fab fa-instagram"></i> chrisk.io</div>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				controlsTutorial: false,
+				progress: true,
+				help: false,
+				transition: 'fade',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<!-- Trigger the header/footers -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+			// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+			var header = $('#header').html();
+			if ( window.location.search.match( /print-pdf/gi ) ) {
+				Reveal.addEventListener( 'ready', function( event ) {
+					$('.slide-background').append(header);
+				});
+			} else {
+				$('div.reveal').append(header);
+			}
+		</script>
+	</body>
+</html>

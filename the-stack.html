@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!-- Custom CSS for the headers and footer -->
+		<style type="text/css">
+			/* 1. Style header/footer <div> so they are positioned as desired. */
+			#header-left {
+				position: absolute;
+				top: 0%;
+				left: 0%;
+			}
+			#header-right {
+				position: absolute;
+				top: 0%;
+				right: 0%;
+			}
+			#footer-left {
+				position: absolute;
+				bottom: 2%;
+				left: 2%;
+				font-size: .5em;
+			}
+
+			.left {
+			left:-8.33%;
+			text-align: left;
+			float: left;
+			width:50%;
+			z-index:-10;
+			}
+
+			.right {
+			left:31.25%;
+			top: 75px;
+			float: right;
+			text-align: right;
+			z-index:-10;
+			width:50%;
+			}
+
+			.reveal section.no-img-borders img {
+				box-shadow: none;
+				border: none;
+				background:none;
+			}
+
+			.abbrev-letter {
+				font-weight: 800;
+				text-decoration: underline;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			
+				<section data-markdown data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					# Request to Response
+
+					Understanding "the stack" in your web application
+				</section>
+
+				<section data-markdown data-background-color="white" class="no-img-borders">
+					## Sandhills Developement
+
+					### Chris Klosowski
+					#### CTO - Partner - Development Lead
+
+					![Sanshills Monsters](images/global/sandhills-monsters.png)
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide" class="no-img-borders">
+						### Name. That. Stack.
+						
+						![GameShowHost](images/stack/host.png)
+					</section>
+
+					<section data-markdown data-transition="slide" class="no-img-borders">
+						# LAMP
+					</section>
+
+					<section data-transition="slide" class="no-img-borders">
+						<h3>
+							<span class="abbrev-letter">L</span>inux <span class="abbrev-letter">A</span>pache <span class="abbrev-letter">M</span>ySQL <span class="abbrev-letter">P</span>HP
+						</h3>
+					</section>
+
+					<section data-markdown data-transition="slide" class="no-img-borders">
+						# JAM
+					</section>
+
+					<section data-transition="slide" class="no-img-borders">
+						<h3>
+							<span class="abbrev-letter">J</span>avaScript <span class="abbrev-letter">A</span>PIs <span class="abbrev-letter">M</span>arkup
+						</h3>
+					</section>
+					
+					<section data-markdown data-transition="slide" class="no-img-borders">
+						# LEMP
+					</section>
+
+					<section data-transition="slide" class="no-img-borders">
+						<h3>
+							<span class="abbrev-letter">L</span>inux (<span class="abbrev-letter">E</span>)nginx <span class="abbrev-letter">M</span>ySQL <span class="abbrev-letter">P</span>HP
+						</h3>
+					</section>
+
+					<section data-markdown data-transition="slide" class="no-img-borders">
+						# MEAN
+					</section>
+
+					<section data-transition="slide" class="no-img-borders">
+						<h3>
+							<span class="abbrev-letter">M</span>ongoDB <span class="abbrev-letter">E</span>xpress.js <span class="abbrev-letter">A</span>ngularJS <span class="abbrev-letter">N</span>ode.js
+						</h3>
+					</section>
+
+					<section data-transition="slide" class="no-img-borders">
+						<h3>Some Others...</h3>
+						
+						<ul>
+							<li class="fragment">MAMP</li>
+							<li class="fragment">WAMP</li>
+							<li class="fragment">XAMPP</li>
+							<li class="fragment">WIMSA/WISA</li>
+						</ul>
+					</section>
+				</section>
+
+				<section data-markdown data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					### A typical HTTP Request
+					
+					![HTTP Request](images/stack/http-request.png)
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide">
+						### Time to First Byte (TTFB)
+					
+						Duration of time from the moment the user makes a request to when the first byte arrives from the server.
+					</section>
+
+					<section data-markdown data-transition="slide">
+						This includes all Database Queries, logic, and API calls necessary to 'calculate' the document to be delivered to the client.
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Yes, I said **All**
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Every...
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Little...
+					</section>
+
+					<section data-markdown data-transition="slide">
+						and large...
+					</section>
+
+					<section data-markdown data-transition="slide">
+						decision.
+					</section>
+				</section>
+
+				<section data-markdown data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					### Lets talk L(E/A)MP
+					
+					The most comment stack used in WordPress
+				</section>
+
+				<section data-markdown data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					### Linux
+					
+					The operating system the server is running
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide">
+						### Apache/Nginx
+					
+						The HTTP Server used to accpet requests via HTTP
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Apache and Nginx can be run together. Nginx can also function as a reverse proxy between Apache and Nginx, or as a standalone proxy to PHP.
+					</section>
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide">
+						### MySQL/MariaDB
+					
+						The persistent data storage for the L(A/E)MP stack.
+					</section>
+						
+					<section data-markdown data-transition="slide">
+						Via "drop-ins" WordPress can support PostgrSQL however this is not official support.
+					</section>
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide">
+						### PHP
+				
+						Currently supporting PHP 5.2+.
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Looking to support 5.6+ in April 2019...
+					</section>
+
+					<section data-markdown data-transition="slide">
+						And PHP 7.0+ in December of 2019
+					</section>
+
+					<section data-markdown data-transition="slide">
+						![Rejoice](images/stack/rejoice.gif)
+					</section>
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide">
+						### So how can we use this?
+				
+						Fine tune our themes and plugins
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Make as few DB calls as possible on initital load
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Use AJAX to populate areas of the site that require large queries
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Use transients to cache data like API calls
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Deploy object and page caching where possible
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Reduces 'decisions' and external resoruces to help improve TTFB
+					</section>
+
+					<section data-markdown data-transition="slide">
+						![Tortoise and Hare](images/stack/tortoise-and-hare.gif)
+					</section>
+				</section>
+
+				<section data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					<section data-markdown data-transition="slide">
+						### Lets talk JAM Stack
+				
+						The new kid on the block
+
+						![NKOTB](images/stack/nkotb.gif)
+					</section>
+
+					<section data-markdown data-transition="slide">
+						JavaScript - APIs - Markup
+					</section>
+
+					<section data-markdown data-transition="slide">
+						JavaScript can be whatever framework you want...or vanilla
+					</section>
+
+					<section data-markdown data-transition="slide">
+						APIs - Hello WPRest API!!!
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Markup - It's markup, what else do we need to say
+					</section>
+
+					<section data-markdown data-transition="slide">
+						Allows deploying a non-WordPress frontend with a WordPress powered backend
+					</section>
+				</section>
+
+				<section data-markdown data-background-image="images/stack/bg.jpg" data-background-opacity=".05">
+					## Hit the LAMPs and lets JAM on stacks.
+				</section>
+			
+			</div>
+		</div>
+
+		<!-- The Header/footers -->
+		<div id="hidden" style="display:none;">
+			<div id="header">
+				<div id="footer-left">
+					<i class="fab fa-twitter"></i> cklosowski | <i class="fab fa-instagram"></i> chrisk.io</div>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				controlsTutorial: false,
+				progress: true,
+				help: false,
+				transition: 'fade',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<!-- Trigger the header/footers -->
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+			// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+			var header = $('#header').html();
+			if ( window.location.search.match( /print-pdf/gi ) ) {
+				Reveal.addEventListener( 'ready', function( event ) {
+					$('.slide-background').append(header);
+				});
+			} else {
+				$('div.reveal').append(header);
+			}
+		</script>
+	</body>
+</html>
